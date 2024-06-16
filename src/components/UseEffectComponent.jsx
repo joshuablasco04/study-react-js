@@ -6,13 +6,13 @@ const UseEffectComponent = () => {
     const [todos, setTodos] = useState([]);
     const [count, setCount] = useState(0);
 
-    useEffect(()=> {
-       fetch('https://jsonplaceholder.typicode.com/todos')
-       .then(res=> res.json())
-       .then(data=> {
-        setTodos(data)
-       })
-    }, []);
+    // useEffect(()=> {
+    //    fetch('https://jsonplaceholder.typicode.com/todos')
+    //    .then(res=> res.json())
+    //    .then(data=> {
+    //     setTodos(data)
+    //    })
+    // }, []);
 
     useEffect(()=>{
         console.log('Count:' + count)

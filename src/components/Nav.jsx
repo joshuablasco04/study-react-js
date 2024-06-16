@@ -1,46 +1,50 @@
 import { useState } from 'react';
 import {CgNametag, CgMenu} from 'react-icons/cg';
+import style from "./Nav.module.css"
 
 
 const Nav = () => {
 
 const [toggle, setToggle] = useState(false);
 
-  const handleMenu = ()=>{
+  const handleShowMenu = ()=>{
     setToggle(!toggle)
   };
 
   return (
     <>
-      <div className="flex items-center justify-between p-10 lg:flex-row">
-          <div className="text-white font-mono text-3xl flex items-center ">
+      <div className="flex items-center justify-between p-10 lg:flex-row ">
+          <div className="text-white font-mono text-3xl flex items-center md:flex-col">            
+            <div>
+              <div className='flex flex-row items-center mb-5'>
+                <CgNametag/>
+                <h1>BLASCO</h1>   
+              </div>
             
-            <CgNametag/>
-            BLASCO
-          </div>
-          <div className="space-x-4">
-            <div className='ssm:hidden md:block space-x-2'>
-              <a href="#" className="text-white hover:bg-indigo-300 rounded-full px-5 py-2 text-xl ">Skills</a>
-              <a href="#" className="text-white hover:bg-indigo-300 rounded-full px-5 py-2 text-xl">Projects</a>
-              <a href="#" className="text-white hover:bg-indigo-300 rounded-full px-5 py-2 text-xl">Testimonials</a>
+                {toggle ? 
+                      <div className='text-3xl flex flex-col md:hidden'>
+                        <a href="#" className="text-white hover:bg-indigo-300 rounded-full px-5 py-2 text-xl ">Skills</a>
+                        <a href="#" className="text-white hover:bg-indigo-300 rounded-full px-5 py-2 text-xl">Projects</a>
+                        <a href="#" className="text-white hover:bg-indigo-300 rounded-full px-5 py-2 text-xl">Testimonials</a>
+                      </div> 
+                    : <div></div>
+                  }                
             </div>
-            
-            
-              <CgMenu/>              
-           
-            
+          </div>
+          <div className=" ">            
+            < CgMenu className='md:hidden text-3xl cursor-pointer' onClick={handleShowMenu}/>
+            <div>              
+              <div className='ssm:hidden md:block space-x-2'>
+                <a href="#" className="text-white hover:bg-indigo-300 rounded-full px-5 py-2 text-xl ">Skills</a>
+                <a href="#" className="text-white hover:bg-indigo-300 rounded-full px-5 py-2 text-xl">Projects</a>
+                <a href="#" className="text-white hover:bg-indigo-300 rounded-full px-5 py-2 text-xl">Testimonials</a>
+              </div>
+                     
+            </div>
+      
           </div>
       </div>
 
-      <div>
-        <div> 
-          <ul className='text-white text-xl ml-10 md:hidden'>
-            <li className='hover:text-blue-900 w-20 cursor-pointer'>Skills</li>
-            <li className='hover:text-blue-900 w-20 my-3 cursor-pointer'>Project</li>
-            <li className='hover:text-blue-900 w-20 cursor-pointer'>Testimonilas</li>
-          </ul>
-        </div>
-      </div>
     </>
   )
 }
