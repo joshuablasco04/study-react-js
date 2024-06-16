@@ -1,0 +1,22 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gray;
+    padding: 10px;
+}
+
+.logo{
+    color: white;
+}
+
+.navbar-items{
+    color: white;
+    display: flex;
+    gap: 10px;
+}
+
+.navbar-items :hover{
+    color: red;
+    transition: 0.3s;
+}
