@@ -8,6 +8,10 @@ import ChildComponent from "./components/ChildComponent"
 import { HeartIcon } from "./components/HeartIcon"
 import ExpandableTextComponent from "./components/ExpandableTextComponent"
 import UseEffectComponent from "./components/UseEffectComponent"
+import ReactHooks from "./components/ReactHooks"
+import ThemeProvider from "./components/ThemeProvider"
+import ThemeButton from "./components/ThemeButton"
+import Reducer from "./components/Reducer"
 
 
 function App() {
@@ -28,6 +32,11 @@ const [counting , setCounting] = useState(0);
 
   return (
     <>
+      <ThemeProvider>
+        <ThemeButton/>
+      </ThemeProvider>
+      <Reducer/>   
+      {/* <ReactHooks/>
       <UseEffectComponent/>
       <ExpandableTextComponent maxChars={20}>
         Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
@@ -46,7 +55,8 @@ const [counting , setCounting] = useState(0);
       <ChildComponent>
         <h1>This is a heading!</h1>
         <p>This is a sample paragraph..</p>
-      </ChildComponent>
+      </ChildComponent> */}
+
     </>
   )
 }

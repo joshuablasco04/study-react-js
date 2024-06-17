@@ -13,7 +13,7 @@ const [toggle, setToggle] = useState(false);
 
   return (
     <>
-      <div className="flex items-center justify-between p-10 lg:flex-row ">
+      <div className="flex  justify-between p-10 lg:flex-row ">
           <div className="text-white font-mono text-3xl flex items-center md:flex-col">            
             <div>
               <div className='flex flex-row items-center mb-5'>
@@ -32,7 +32,7 @@ const [toggle, setToggle] = useState(false);
             </div>
           </div>
           <div className=" ">            
-            < CgMenu className='md:hidden text-3xl cursor-pointer' onClick={handleShowMenu}/>
+            < CgMenu className='md:hidden text-3xl cursor-pointer hover:scale-125' onClick={handleShowMenu}/>
             <div>              
               <div className='ssm:hidden md:block space-x-2'>
                 <a href="#" className="text-white hover:bg-indigo-300 rounded-full px-5 py-2 text-xl ">Skills</a>
